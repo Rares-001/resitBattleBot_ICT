@@ -1,12 +1,7 @@
-/*********
-  Rui Santos
-  Complete project details at https://randomnerdtutorials.com  
-*********/
 
-// Load Wi-Fi library
 #include <WiFi.h>
 
-// Replace with your network credentials
+
 const char* ssid     = "Rares";
 const char* password = "123456789";
 
@@ -41,10 +36,9 @@ void setup() {
   ledcSetup(3, 4000, 8); // 12 kHz PWM, 8-bit resolution
 
   
-  
-    // Connect to Wi-Fi network with SSID and password
+
     Serial.print("Setting Access Point…");
-    // Remove the password parameter, if you want the AP (Access Point) to be open
+
     WiFi.softAP(ssid, password);
 
     IPAddress IP = WiFi.softAPIP();
@@ -101,8 +95,6 @@ void loop(){
             
             // Display the HTML web page
             client.println("<!DOCTYPE html><html>");
-            client.println("<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
-            client.println(".button2 {background-color: #555555;}</style></head>");
             
             // Web Page
             client.println("<body><h1>Control the fantastic robot :)) </h1>");
